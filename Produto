@@ -1,0 +1,56 @@
+//Bibliotecas
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import javax.swing.JOptionPane;
+
+// Classe Mãe
+public class Produto {
+	
+	// Atributos
+	private int codigo;
+	private double preco;
+	private String descricao;
+	
+	//Get e Set
+public int getCodigo() {
+		return codigo;
+	}
+	
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	//Métodos
+	public void inserirDados() {
+		this.codigo = Integer.parseInt(JOptionPane.showInputDialog("Código"));
+		this.descricao = JOptionPane.showInputDialog("Descrição");
+		this.preco = Double.parseDouble(JOptionPane.showInputDialog("Preço"));
+	}
+	
+	// Sobrescrita de método
+	@Override
+	public String toString() {
+		NumberFormat moeda = DecimalFormat.getCurrencyInstance();
+		String texto = "Este produto é um(a) " + this.descricao 
+				+ ", o seu código na loja é " + this.codigo 
+				+ " e o seu preço de venda é " + moeda.format(this.preco);
+		return texto;
+	}
+
+}
