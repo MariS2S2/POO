@@ -1,0 +1,11 @@
+public class Caderno extends Produto {
+	private int quantidadeFolhas;
+
+	public int getQuantidadeFolhas() {
+		return quantidadeFolhas;
+	}
+
+	public void setQuantidadeFolhas(int quantidadeFolhas) {
+		this.quantidadeFolhas = quantidadeFolhas;
+	}	
+}
