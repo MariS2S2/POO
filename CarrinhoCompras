@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class CarrinhoCompras {
+	//Atributo
+	private List<Produto> listaProdutos = new ArrayList<Produto>();
+	
+	//Get e Set
+	public void adicionar(Produto produto) {
+		listaProdutos.add(produto);
+	}
+	
+	public List<Produto> gerarLista() {
+		return this.listaProdutos;
+	}
+}
