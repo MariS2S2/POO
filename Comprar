@@ -28,8 +28,10 @@ public class Comprar {
 		for(Produto produtos : minhaLista) {
 			totalFrete = totalFrete + (km*2);
 			JOptionPane.showMessageDialog(null, produtos.toString());
-			JOptionPane.showMessageDialog(null, "Total Frete: " + totalFrete);
 	}
+
+            JOptionPane.showMessageDialog(null, "Total Frete: " + totalFrete);
+
 	}
 
 }
