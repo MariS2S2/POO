@@ -1,0 +1,35 @@
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+public class Comprar {
+
+	public static void main(String[] args) {
+		//Instância dos objetos
+		Caderno caderno1 = new Caderno();
+		Caneta caneta1 = new Caneta();
+		
+		//Usar os objetos criados
+		caderno1.inserirDados();
+		caneta1.inserirDados();
+		
+		//Instância de Carrinho
+		CarrinhoCompras meuCarrinho = new CarrinhoCompras();
+		
+		//Usar Carrinho
+		meuCarrinho.adicionar(caderno1);
+		meuCarrinho.adicionar(caneta1);
+		
+		List<Produto> minhaLista = meuCarrinho.gerarLista();
+		
+		double totalFrete = 0;
+		int km = Integer.parseInt(JOptionPane.showInputDialog("Quantos KM?"));
+		
+		for(Produto produtos : minhaLista) {
+			totalFrete = totalFrete + (km*2);
+			JOptionPane.showMessageDialog(null, produtos.toString());
+			JOptionPane.showMessageDialog(null, "Total Frete: " + totalFrete);
+	}
+	}
+
+}
